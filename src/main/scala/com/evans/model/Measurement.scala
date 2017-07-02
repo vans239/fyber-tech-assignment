@@ -1,4 +1,4 @@
-package com.evans
+package com.evans.model
 
 /**
   * Created by vans239 on 01/07/17.
