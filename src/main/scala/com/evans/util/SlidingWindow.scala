@@ -35,7 +35,7 @@ class SlidingWindow[A](extractor: A => Long, window: FiniteDuration) {
     val minTimestamp = extractor(el) - window.toSeconds
 
     var outdated = Seq.empty[A]
-    while (queue.nonEmpty && extractor(queue.head) < minTimestamp) {
+    while (queue.nonEmpty && extractor(queue.head) <= minTimestamp) {
       outdated = outdated.+:(queue.dequeue())
     }
 
